@@ -49,4 +49,9 @@ public class PlayerController {
     public void updateTitles(@PathVariable int id, @RequestBody int titles) {
         service.updateTitles(id, titles);
     }
+
+    @DeleteMapping("/players/{id}")
+    public String deletePlayer(@PathVariable int id) {
+        return service.deletePlayer(id);
+    }
 }

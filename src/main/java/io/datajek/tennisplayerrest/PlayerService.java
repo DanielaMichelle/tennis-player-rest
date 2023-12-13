@@ -80,4 +80,13 @@ public class PlayerService {
     }
 
     //delete a player
+    public String deletePlayer(int id) {
+        try {
+            repo.deleteById(id);
+        } catch(Exception e) {
+            return "Player with id " + id + "not found";
+        }
+
+        return "Deleted player with id: " + id;
+    }
 }
