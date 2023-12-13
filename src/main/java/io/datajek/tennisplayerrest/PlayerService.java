@@ -35,6 +35,9 @@ public class PlayerService {
     }
 
     //Add a player
+    public Player addPlayer(Player p) {
+        return repo.save(p);
+    }
 
     //Update a player
 
