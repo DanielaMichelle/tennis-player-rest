@@ -40,6 +40,20 @@ public class PlayerService {
     }
 
     //Update a player
+    public Player updatePlayer(int id, Player p) {
+
+        //get player object by ID
+        Player player = repo.getOne(id);
+
+        //update player details
+        player.setName(p.getName());
+        player.setNationality(p.getNationality());
+        player.setBirthDate(p.getBirthDate());
+        player.setTitles(p.getTitles());
+
+        //save updates
+        return repo.save(player);
+    }
 
     //Partial update
 

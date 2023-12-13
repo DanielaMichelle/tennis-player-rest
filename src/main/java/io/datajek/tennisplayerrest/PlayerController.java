@@ -32,4 +32,9 @@ public class PlayerController {
         player.setId(0); // If the user inserts a id
         return service.addPlayer(player);
     }
+
+    @PutMapping("/players/{id}")
+    public Player updatePlayer(@RequestBody Player player, @PathVariable int id) {
+        return service.updatePlayer(id, player);
+    }
 }
